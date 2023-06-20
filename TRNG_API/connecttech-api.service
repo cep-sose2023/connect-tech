@@ -1,0 +1,15 @@
+[Unit]
+Description=ConnectTech API Service
+After=nulti-user.target
+Requieres=network.target
+
+[Service]
+Type=idle
+User=connecttech
+ExecStart=/bin/python3 /home/connecttech/TrueRandomNumberGenerator/TRNG_API/__init__.py
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
